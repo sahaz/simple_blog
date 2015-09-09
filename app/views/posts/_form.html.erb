@@ -1,0 +1,26 @@
+<%= form_for :post, url: posts_path do |f| %>
+
+<% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h6><%= pluralize(@post.errors.count, "error") %> prohibited this purchase from being saved:</h6>
+
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br>
+    <%= f.text_area :body, size: "80X40" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
