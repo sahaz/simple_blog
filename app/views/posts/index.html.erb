@@ -1,29 +1,23 @@
 <p id="notice"><%= notice %></p>
 <div class: "container well">
-<h1>Listing Posts</h1>
 
-<table border=1 class: "table " >
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="row">
+  <div class="col-lg-10">
     <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.body %></td>
-        <td ><%=  link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td ><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+            <h6><%= post.created_at.strftime("%B %d, %Y") %></h6>
+            <h1><%= link_to post.title, post %></h1>
+            <hr>
     <% end %>
-  </tbody>
-</table>
+  </div>
+  <div class="col-lg-2">
+
+  </div>
+</div>
 </div>
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+
+
+
+
+

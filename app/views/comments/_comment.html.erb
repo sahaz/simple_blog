@@ -1,0 +1,22 @@
+
+  <div class="row"><hr>
+    <div class="col-lg-10">  
+
+      <h5><%= comment.commenter %></h5><h6><em><%= time_ago_in_words(
+      comment.created_at) %> ago</em></h6>
+    </div>
+    <div class="col-lg-2">
+    <%= link_to 'Delete', [comment.post, comment], class: "btn btn-default btn-xs",
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>      
+    </div>
+    </div>
+
+    <h5><%= comment.body %></h5>
+   
+  
+    
+  
+
+
+
