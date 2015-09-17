@@ -28,14 +28,12 @@ class PostsController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @post.update(post_params)
-        format.html { redirect_to @purchase, notice: 'Purchase was successfully updated.' }
-        format.json { render :show, status: :ok, location: @post }
-      else
-        format.html { render :edit }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+     @post = Post.find(params[:id])
+ 
+    if @post.update(post_params)
+      redirect_to @post
+    else
+      render 'edit'
     end
   end
 
